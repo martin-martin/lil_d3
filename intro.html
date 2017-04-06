@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>many mini playings for learnz</title>
+	<script src="d3.min.js"></script>
+	<!-- uncomment for using d3 from a CDN -->
+	<!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+</head>
+<body>
+<script type="text/javascript">
+
+	// talk to DOM.
+		// DOM? anyone here?
+	d3.select("body")
+		.append("p")
+		.text("hello?");
+		// yep! me here!
+	d3.select("p")
+		.text("Hei!!");
+
+	// do some data
+	// http://javascript.tutorialhorizon.com/2014/11/20/a-visual-explanation-of-the-enter-update-and-exit-selections-in-d3js/
+		// make stuff, make unique
+	d3.select("body")
+		.append("ul")
+		.attr("id", "example");
+		// some data for playz
+	var multiples = [5, 10, 15, 20, 25];
+		// some boxes for putz
+	var container = d3.select("#example");
+		// moar little boxez
+	for (var i = 0; i < 3; i++) {
+		container.append("li");
+	}
+		// fetch 'em those lil onez!
+	var children = d3.selectAll("li");
+		// make mixin from d and li
+	var updateSelection = children.data(multiples);
+
+	d3.select("#example")
+		.selectAll("li")
+		.data(multiples)
+		// gimme back those numbers!
+		.text( function (d) {return d; });
+
+
+	// peek for wowz!
+		// such functions
+		// wow!
+	//console.log(d3);
+</script>
+</body>
+</html>
